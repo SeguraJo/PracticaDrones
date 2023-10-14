@@ -17,10 +17,9 @@ public class DronAdapter extends BaseAdapter {
             R.drawable.dron1,
             R.drawable.dron2,
             R.drawable.dron3,
-            R.drawable.dron4
+            R.drawable.dron4,
+            R.drawable.drone5
     };
-
-    DronAdapter(Context context){ this.context = context; }
     private final String[] textoArray =  {
             "Tricópteros",
             "Cuadricópteros",
@@ -29,15 +28,20 @@ public class DronAdapter extends BaseAdapter {
             "Coaxiales."
     };
 
+    DronAdapter(Context context){ this.context = context; }
 
     @Override
     public int getCount() {
         return imagesArray.length;
     }
 
+    public int getImagesArray(int position) {
+        return imagesArray[position];
+    }
+
     @Override
-    public Object getItem(int position) {
-        return null;
+    public String getItem(int position) {
+        return textoArray[position];
     }
 
     @Override

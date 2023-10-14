@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:src="@drawable/drone6"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="DRONETECH"
+            android:textSize="35sp"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textColor="#3091DF"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/v2"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/line2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="46dp" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="359dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/v2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="TRICOPTERO"
+        android:textAlignment="textStart"
+        android:textColor="#1B5E97"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="359dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="TRICOPTERO"
+        android:textAlignment="textStart"
+        android:textColor="#212223"
+        android:textSize="25sp" />
+
+
+</RelativeLayout>
