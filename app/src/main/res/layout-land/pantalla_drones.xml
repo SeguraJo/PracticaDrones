@@ -7,39 +7,38 @@
     <LinearLayout
         android:id="@+id/line1"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="83dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="397dp"
+            android:layout_height="82dp"
             android:layout_weight="2"
-            android:src="@drawable/drone6"
-            />
+            android:src="@drawable/drone6" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="713dp"
+            android:layout_height="79dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="DRONETECH"
-            android:textSize="35sp"
-            android:textAlignment="gravity"
-            android:gravity="center"
-            android:textColor="#3091DF"
-            android:textStyle="bold"
             android:fontFamily="sans-serif"
-            />
+            android:gravity="center"
+            android:text="DRONETECH"
+            android:textAlignment="center"
+            android:textColor="#3091DF"
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
 
     <ListView
         android:id="@+id/lView"
-        android:layout_width="match_parent"
-        android:layout_height="502dp"
         android:layout_below="@+id/line1"
         android:layout_marginTop="25dp"
-        android:scrollbars="vertical" />
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:scrollbars="vertical"
+    />
 
 </RelativeLayout>

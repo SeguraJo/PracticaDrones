@@ -25,8 +25,7 @@ public class InfoDrone extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_drone);
-
-        Intent intent = getIntent();
+        
         v2 = findViewById(R.id.v2);
         text2 = findViewById(R.id.text2);
         text3 = findViewById(R.id.text3);
@@ -36,9 +35,11 @@ public class InfoDrone extends AppCompatActivity {
         if (position != -1){
             String nombre = String.valueOf(getIntent().getStringExtra("name"));
             int image = getIntent().getIntExtra("image", -1);
+            String desc = getIntent().getStringExtra("description");
 
             v2.setImageResource(image);
             text2.setText(nombre);
+            text3.setText(desc);
         }
     }
 }

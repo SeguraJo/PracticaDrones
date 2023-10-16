@@ -37,6 +37,8 @@ public class PantallaDrones extends AppCompatActivity {
             intent.putExtra("position", position);
             intent.putExtra("name", ((DronAdapter)listView.getAdapter()).getItem(position));
             intent.putExtra("image", ((DronAdapter)listView.getAdapter()).getImagesArray(position));
+            intent.putExtra("description", ((DronAdapter)listView.getAdapter()).getDescripcion());
+
             startActivity(intent);
         }
       });

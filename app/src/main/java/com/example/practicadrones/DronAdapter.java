@@ -28,7 +28,13 @@ public class DronAdapter extends BaseAdapter {
             "Coaxiales."
     };
 
+    private final String descripcion = "Drone compacto y versátil con capacidades avanzadas de grabación de video y fotografía.";
+
     DronAdapter(Context context){ this.context = context; }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
 
     @Override
     public int getCount() {
