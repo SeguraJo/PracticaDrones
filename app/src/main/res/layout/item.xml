@@ -3,28 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="150dp"
     android:orientation="vertical"
     android:padding="10dp">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        app:cardElevation="3sp"
+        app:cardCornerRadius="25dp"
+        android:backgroundTint="#C5CAE9"
+        android:textAlignment="gravity"
+        >
     <ImageView
         android:id="@+id/imagen"
         android:layout_width="107dp"
-        android:layout_height="76dp"
-        android:layout_marginLeft="15dp"
+        android:layout_height="80dp"
+        android:layout_gravity="start|center"
+        android:layout_marginLeft="25dp"
         android:src="@drawable/dron1" />
 
-    <TextView
-        android:id="@+id/texto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_toRightOf="@+id/imagen"
-        android:layout_centerHorizontal="true"
-        android:text="NAVIDAD"
-        android:layout_marginTop="30dp"
-        android:textSize="30dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#086481" />
+        <TextView
+            android:id="@+id/texto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="150dp"
+            android:text="NAVIDAD"
+            android:layout_gravity="start|center"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#086481"
+            android:textSize="30dp" />
+
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

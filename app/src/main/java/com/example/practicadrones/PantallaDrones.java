@@ -1,47 +1,46 @@
 package com.example.practicadrones;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class PantallaDrones extends AppCompatActivity {
 
-    ListView listView;
+    RecyclerView recyclerView;
 
    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pantalla_drones);
 
-        listView = (ListView) findViewById(R.id.lView);
-        ArrayAdapter < String > adapterSpinner = new ArrayAdapter<>(PantallaDrones.this, android.R.layout.simple_spinner_item);
+        recyclerView = findViewById(R.id.recyclerView);
 
-        listView.setAdapter(adapterSpinner);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        listView = findViewById(R.id.lView);
+        final int[] imagesArray = {
+               R.drawable.dron1,
+               R.drawable.dron2,
+               R.drawable.dron3,
+               R.drawable.dron4,
+               R.drawable.drone5
+       };
 
-        listView.setAdapter(new DronAdapter(PantallaDrones.this));
+       final String[] textoArray =  {
+               "Tricópteros",
+               "Cuadricópteros",
+               "Hexacópteros.",
+               "Octocópteros",
+               "Coaxiales."
+       };
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+       final String descripcion = "Drone compacto y versátil con capacidades avanzadas de grabación de video y fotografía.";
 
-            Intent intent = new Intent(PantallaDrones.this, InfoDrone.class);
-            intent.putExtra("position", position);
-            intent.putExtra("name", ((DronAdapter)listView.getAdapter()).getItem(position));
-            intent.putExtra("image", ((DronAdapter)listView.getAdapter()).getImagesArray(position));
-            intent.putExtra("description", ((DronAdapter)listView.getAdapter()).getDescripcion());
+       DronAdapter adapter = new DronAdapter(this, imagesArray, textoArray, descripcion);
+       recyclerView.setAdapter(adapter);
 
-            startActivity(intent);
-        }
-      });
 
     }
 }

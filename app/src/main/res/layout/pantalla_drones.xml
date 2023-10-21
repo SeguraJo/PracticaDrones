@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E8E5E5"
     >
 
     <LinearLayout
@@ -34,12 +35,14 @@
     </LinearLayout>
 
 
-    <ListView
-        android:id="@+id/lView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="502dp"
+        android:layout_height="652dp"
         android:layout_below="@+id/line1"
-        android:layout_marginTop="25dp"
-        android:scrollbars="vertical" />
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

@@ -30,16 +30,15 @@ public class InfoDrone extends AppCompatActivity {
         text2 = findViewById(R.id.text2);
         text3 = findViewById(R.id.text3);
 
-        int position = getIntent().getIntExtra("position", -1);
+        Intent intent = getIntent();
 
-        if (position != -1){
-            String nombre = String.valueOf(getIntent().getStringExtra("name"));
-            int image = getIntent().getIntExtra("image", -1);
-            String desc = getIntent().getStringExtra("description");
+        String nombre = String.valueOf(intent.getStringExtra("nombre"));
+        int image = intent.getIntExtra("imagen", -1);
+        String desc = String.valueOf(intent.getStringExtra("descripcion"));
 
-            v2.setImageResource(image);
-            text2.setText(nombre);
-            text3.setText(desc);
-        }
+        v2.setImageResource(image);
+        text2.setText(nombre);
+        text3.setText(desc);
+
     }
 }

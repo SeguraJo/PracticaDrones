@@ -12,9 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PracticaDrones"
         tools:targetApi="31">
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -28,9 +26,9 @@
 
             <!-- Puedes incluir más configuraciones de actividad aquí si es necesario -->
         </activity>
-        <activity android:name=".InfoDrone">
-
-            <!-- Puedes incluir más configuraciones de actividad aquí si es necesario -->
+        <activity
+            android:name=".InfoDrone"
+            android:label="InfoDrone">
         </activity>
     </application>
 

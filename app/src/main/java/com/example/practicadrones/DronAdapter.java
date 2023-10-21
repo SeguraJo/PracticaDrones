@@ -1,75 +1,76 @@
 package com.example.practicadrones;
 
 import android.content.Context;
-import android.text.Layout;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DronAdapter extends BaseAdapter {
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class DronAdapter extends RecyclerView.Adapter<DronAdapter.ViewHolder> {
 
     Context context;
+    private int[] imagesArray;
+    private String[] textoArray;
 
-    private final int[] imagesArray = {
-            R.drawable.dron1,
-            R.drawable.dron2,
-            R.drawable.dron3,
-            R.drawable.dron4,
-            R.drawable.drone5
-    };
-    private final String[] textoArray =  {
-            "Tricópteros",
-            "Cuadricópteros",
-            "Hexacópteros.",
-            "Octocópteros",
-            "Coaxiales."
-    };
+    private String descripcion;
 
-    private final String descripcion = "Drone compacto y versátil con capacidades avanzadas de grabación de video y fotografía.";
+    DronAdapter(Context context, int[] imagesArray, String[] textoArray, String descripcion){ this.context = context;
+        this.imagesArray = imagesArray;
+        this.textoArray = textoArray;
+        this.descripcion = descripcion;
+    }
 
-    DronAdapter(Context context){ this.context = context; }
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
+        return new ViewHolder(view);
+    }
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        holder.imagen.setImageResource(imagesArray[position]);
+        holder.texto.setText(textoArray[position]);
 
-    public String getDescripcion() {
-        return descripcion;
     }
 
     @Override
-    public int getCount() {
-        return imagesArray.length;
+    public int getItemCount() {
+        return textoArray.length;
     }
 
-    public int getImagesArray(int position) {
-        return imagesArray[position];
-    }
+        public class ViewHolder extends RecyclerView.ViewHolder {
+            ImageView imagen;
+            TextView texto;
 
-    @Override
-    public String getItem(int position) {
-        return textoArray[position];
-    }
+            public ViewHolder(View itemView) {
+                super(itemView);
+                imagen = itemView.findViewById(R.id.imagen);
+                texto = itemView.findViewById(R.id.texto);
 
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
+                itemView.setOnClickListener(v -> {
 
-    @Override
-    public View getView(int i, View view, ViewGroup parent) {
-        if (view == null){
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.item, null);
+                    int position = getAdapterPosition();
 
-            ImageView imagen = view.findViewById(R.id.imagen);
-            imagen.setImageResource(imagesArray[i]);
+                    if (position != RecyclerView.NO_POSITION){
+                        String nombre = textoArray[position];
+                        int imagen = imagesArray[position];
 
-            TextView texto = view.findViewById(R.id.texto);
-            texto.setText(textoArray[i]);
+                        Intent intent = new Intent(context, InfoDrone.class);
+                        intent.putExtra("nombre", nombre);
+                        intent.putExtra("imagen", imagen);
+                        intent.putExtra("descripcion", descripcion);
+
+                        context.startActivity(intent);
+
+                    }
+                });
+
+            }
         }
-
-        return view;
-    }
-
 
 }
