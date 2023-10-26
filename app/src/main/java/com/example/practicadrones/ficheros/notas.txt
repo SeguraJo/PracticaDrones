@@ -1,5 +1,0 @@
-R.drawable.dron1,Tricópteros,Drone compacto y versatil con capacidades avanzadas de grabacion de video y fotografia
-R.drawable.dron2,Cuadricópteros
-R.drawable.dron3,Hexacópteros
-R.drawable.dron4,Octocópteros
-R.drawable.drone5,Coaxiales

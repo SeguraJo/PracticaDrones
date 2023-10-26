@@ -1,0 +1,5 @@
+dron1,Tricópteros,Drone compacto y versatil con capacidades avanzadas de grabacion de video y fotografia
+dron2,Cuadricópteros,Pequeño y ágil diseñado para competiciones de velocidad aérea. Equipado con potentes motores y controladores de vuelo de alto rendimiento.
+dron3,Hexacópteros,Un dron diseñado para la captura de imágenes y videos aéreos. Generalmente equipado con cámaras de alta resolución y estabilización avanzada.
+dron4,Octocópteros,Utilizado en logística y entregas estos drones pueden transportar paquetes pequeños y realizar entregas a destinos específicos.
+drone5,Coaxiales,Dirigido a la enseñanza y aprendizaje de programación y tecnología. Diseñado para que los estudiantes comprendan los principios de vuelo y la programación de drones.

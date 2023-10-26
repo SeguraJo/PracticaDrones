@@ -11,18 +11,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+
 public class DronAdapter extends RecyclerView.Adapter<DronAdapter.ViewHolder> {
 
     Context context;
-    private int[] imagesArray;
-    private String[] textoArray;
+    private final ArrayList<Integer> imagesArray;
+    private final ArrayList<String> textoArray;
 
-    private String descripcion;
+    private final ArrayList<String> descArray;
 
-    DronAdapter(Context context, int[] imagesArray, String[] textoArray, String descripcion){ this.context = context;
+    DronAdapter(Context context, ArrayList<Integer> imagesArray, ArrayList<String> textoArray, ArrayList<String> descArray){
+        this.context = context;
         this.imagesArray = imagesArray;
         this.textoArray = textoArray;
-        this.descripcion = descripcion;
+        this.descArray = descArray;
     }
 
     @NonNull
@@ -33,19 +38,19 @@ public class DronAdapter extends RecyclerView.Adapter<DronAdapter.ViewHolder> {
     }
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.imagen.setImageResource(imagesArray[position]);
-        holder.texto.setText(textoArray[position]);
-
+        holder.imagen.setImageResource(imagesArray.get(position));
+        holder.texto.setText(textoArray.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return textoArray.length;
+        return textoArray.size();
     }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             ImageView imagen;
             TextView texto;
+
 
             public ViewHolder(View itemView) {
                 super(itemView);
@@ -57,8 +62,9 @@ public class DronAdapter extends RecyclerView.Adapter<DronAdapter.ViewHolder> {
                     int position = getAdapterPosition();
 
                     if (position != RecyclerView.NO_POSITION){
-                        String nombre = textoArray[position];
-                        int imagen = imagesArray[position];
+                        String nombre = textoArray.get(position);
+                        int imagen = imagesArray.get(position);
+                        String descripcion = descArray.get(position);
 
                         Intent intent = new Intent(context, InfoDrone.class);
                         intent.putExtra("nombre", nombre);
