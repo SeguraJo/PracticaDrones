@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:backgroundTint="#C5CAE9"
+        android:textAlignment="gravity"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="3sp">
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="107dp"
+            android:layout_height="80dp"
+            android:layout_gravity="start|center"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/dron1" />
+
+        <TextView
+            android:id="@+id/texto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="start|center"
+            android:layout_marginLeft="150dp"
+            android:text="NAVIDAD"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#086481"
+            android:textSize="30dp" />
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

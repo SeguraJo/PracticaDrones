@@ -7,29 +7,27 @@
     <LinearLayout
         android:id="@+id/line1"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="69dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="82dp"
+            android:layout_height="54dp"
             android:layout_weight="2"
-            android:src="@drawable/drone6"
-            />
+            android:src="@drawable/drone6" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="643dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="DRONETECH"
-            android:textSize="35sp"
-            android:textAlignment="gravity"
-            android:gravity="center"
-            android:textColor="#3091DF"
-            android:textStyle="bold"
             android:fontFamily="sans-serif"
-            />
+            android:gravity="center"
+            android:text="DRONETECH"
+            android:textAlignment="gravity"
+            android:textColor="#3091DF"
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
